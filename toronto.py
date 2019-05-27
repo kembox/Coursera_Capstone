@@ -53,6 +53,36 @@ print('CLIENT_SECRET:' + CLIENT_SECRET)
 
 client = foursquare.Foursquare(client_id=CLIENT_ID, client_secret=CLIENT_SECRET,version='20190528')
 
+#Venues categories
+Residence='4e67e38e036454776db1fb3a'
+ParkingLot='4c38df4de52ce0d596b336e1'
+BusStation='4bf58dd8d48988d1fe931735'
+BusStop='52f2ab2ebcbc57f1066b8b4f'
+Hotel='4bf58dd8d48988d1fa931735'
+Intersection='52f2ab2ebcbc57f1066b8b4c'
+MetroStation='4bf58dd8d48988d1fd931735'
+LightRailStation='4bf58dd8d48988d1fc931735'
+TrainStation='4bf58dd8d48988d129951735'
+Office='4bf58dd8d48988d124941735'
+Market='50be8ee891d4fa8dcc7199a7'
+MovieTheater='4bf58dd8d48988d17f941735'
+KitchenSupplyStore='58daa1558bbb0b01f18ec1b4'
+Butcher
+4bf58dd8d48988d11d951735
+Cheese Shop
+4bf58dd8d48988d11e951735
+Farmers Market
+4bf58dd8d48988d1fa941735
+Fish Market
+4bf58dd8d48988d10e951735
+Food Service
+56aa371be4b08b9a8d573550
+Gourmet Shop
+4bf58dd8d48988d1f5941735
+Grocery Store
+4bf58dd8d48988d118951735
+
+
 def ParkingLotNearby(df):
     L=[]
     #for row in df.head(3).itertuples():
