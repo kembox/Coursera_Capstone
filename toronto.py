@@ -67,33 +67,30 @@ Office='4bf58dd8d48988d124941735'
 Market='50be8ee891d4fa8dcc7199a7'
 MovieTheater='4bf58dd8d48988d17f941735'
 KitchenSupplyStore='58daa1558bbb0b01f18ec1b4'
-Butcher
-4bf58dd8d48988d11d951735
-Cheese Shop
-4bf58dd8d48988d11e951735
-Farmers Market
-4bf58dd8d48988d1fa941735
-Fish Market
-4bf58dd8d48988d10e951735
-Food Service
-56aa371be4b08b9a8d573550
-Gourmet Shop
-4bf58dd8d48988d1f5941735
-Grocery Store
-4bf58dd8d48988d118951735
+Butcher='4bf58dd8d48988d11d951735'
+CheeseShop='4bf58dd8d48988d11e951735'
+FarmersMarket='4bf58dd8d48988d1fa941735'
+FishMarket='4bf58dd8d48988d10e951735'
+FoodService='56aa371be4b08b9a8d573550'
+GourmetShop='4bf58dd8d48988d1f5941735'
+GroceryStore='4bf58dd8d48988d118951735'
 
 
-def ParkingLotNearby(df):
+def ParkingLotNearby(venue_category,radius=500,count=3):
     L=[]
-    #for row in df.head(3).itertuples():
+    global toronto_data
+    #for row in df.head(10).itertuples():
     for row in df.itertuples():
         ll=str(row.Latitude) + ',' +  str(row.Longitude)
-        park=client.venues.search(params={'ll':ll,'categoryId':'4c38df4de52ce0d596b336e1','radius':500})
-        if len(park['venues']) > 3:
+        venue=client.venues.search(params={'ll':ll,'categoryId':venue_category,'radius':radius})
+        print(venue)
+        if len(venue['venues']) > count:
             L.append(1)
         else:
             L.append(0)
-    return(L)
+    extra_df=pd.DataFrame(L,columns=['FishMarket'])
+    toronto_data=toronto_data.join(extra_df)
+    
 
-ParkingLotDf=pd.DataFrame(ParkingLotNearby(toronto_data),columns=['ParkingLotNearby'])
-print(ParkingLotDf.head())
+ParkingLotNearby(FishMarket)
+print(toronto_data.head())
