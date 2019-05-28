@@ -1,39 +1,39 @@
-,PostCode,Borough,Neighborhood,Latitude,Longitude
-0,M4E,East Toronto,The Beaches,43.67635739999999,-79.2930312
-1,M4K,East Toronto,"The Danforth West, Riverdale",43.6795571,-79.352188
-2,M4L,East Toronto,"The Beaches West, India Bazaar",43.6689985,-79.31557159999998
-3,M4M,East Toronto,Studio District,43.6595255,-79.340923
-4,M4N,Central Toronto,Lawrence Park,43.7280205,-79.3887901
-5,M4P,Central Toronto,Davisville North,43.7127511,-79.3901975
-6,M4R,Central Toronto,North Toronto West,43.7153834,-79.40567840000001
-7,M4S,Central Toronto,Davisville,43.7043244,-79.3887901
-8,M4T,Central Toronto,"Moore Park, Summerhill East",43.6895743,-79.38315990000001
-9,M4V,Central Toronto,"Deer Park, Forest Hill SE, Rathnelly, South Hill, Summerhill West",43.68641229999999,-79.4000493
-10,M4W,Downtown Toronto,Rosedale,43.6795626,-79.37752940000001
-11,M4X,Downtown Toronto,"Cabbagetown, St. James Town",43.667967,-79.3676753
-12,M4Y,Downtown Toronto,Church and Wellesley,43.6658599,-79.38315990000001
-13,M5A,Downtown Toronto,"Harbourfront, Regent Park",43.6542599,-79.3606359
-14,M5B,Downtown Toronto,"Ryerson, Garden District",43.6571618,-79.37893709999999
-15,M5C,Downtown Toronto,St. James Town,43.6514939,-79.3754179
-16,M5E,Downtown Toronto,Berczy Park,43.644770799999996,-79.3733064
-17,M5G,Downtown Toronto,Central Bay Street,43.6579524,-79.3873826
-18,M5H,Downtown Toronto,"Adelaide, King, Richmond",43.65057120000001,-79.3845675
-19,M5J,Downtown Toronto,"Harbourfront East, Toronto Islands, Union Station",43.6408157,-79.38175229999999
-20,M5K,Downtown Toronto,"Design Exchange, Toronto Dominion Centre",43.6471768,-79.38157640000001
-21,M5L,Downtown Toronto,"Commerce Court, Victoria Hotel",43.6481985,-79.37981690000001
-22,M5N,Central Toronto,Roselawn,43.7116948,-79.41693559999999
-23,M5P,Central Toronto,"Forest Hill North, Forest Hill West",43.6969476,-79.41130720000001
-24,M5R,Central Toronto,"The Annex, North Midtown, Yorkville",43.6727097,-79.40567840000001
-25,M5S,Downtown Toronto,"Harbord, University of Toronto",43.6626956,-79.4000493
-26,M5T,Downtown Toronto,"Chinatown, Grange Park, Kensington Market",43.6532057,-79.4000493
-27,M5V,Downtown Toronto,"CN Tower, Bathurst Quay, Island airport, Harbourfront West, King and Spadina, Railway Lands, South Niagara",43.6289467,-79.3944199
-28,M5W,Downtown Toronto,Stn A PO Boxes 25 The Esplanade,43.6464352,-79.37484599999999
-29,M5X,Downtown Toronto,"First Canadian Place, Underground city",43.6484292,-79.3822802
-30,M6G,Downtown Toronto,Christie,43.669542,-79.4225637
-31,M6H,West Toronto,"Dovercourt Village, Dufferin",43.66900510000001,-79.4422593
-32,M6J,West Toronto,"Little Portugal, Trinity",43.647926700000006,-79.4197497
-33,M6K,West Toronto,"Brockton, Exhibition Place, Parkdale Village",43.6368472,-79.42819140000002
-34,M6P,West Toronto,"High Park, The Junction South",43.6616083,-79.46476329999999
-35,M6R,West Toronto,"Parkdale, Roncesvalles",43.6489597,-79.456325
-36,M6S,West Toronto,"Runnymede, Swansea",43.6515706,-79.4844499
-37,M7Y,East Toronto,Business Reply Mail Processing Centre 969 Eastern,43.6627439,-79.321558
+PostCode,Borough,Neighborhood,Latitude,Longitude
+M4E,East Toronto,The Beaches,43.67635739999999,-79.2930312
+M4K,East Toronto,"The Danforth West, Riverdale",43.6795571,-79.352188
+M4L,East Toronto,"The Beaches West, India Bazaar",43.6689985,-79.31557159999998
+M4M,East Toronto,Studio District,43.6595255,-79.340923
+M4N,Central Toronto,Lawrence Park,43.7280205,-79.3887901
+M4P,Central Toronto,Davisville North,43.7127511,-79.3901975
+M4R,Central Toronto,North Toronto West,43.7153834,-79.40567840000001
+M4S,Central Toronto,Davisville,43.7043244,-79.3887901
+M4T,Central Toronto,"Moore Park, Summerhill East",43.6895743,-79.38315990000001
+M4V,Central Toronto,"Deer Park, Forest Hill SE, Rathnelly, South Hill, Summerhill West",43.68641229999999,-79.4000493
+M4W,Downtown Toronto,Rosedale,43.6795626,-79.37752940000001
+M4X,Downtown Toronto,"Cabbagetown, St. James Town",43.667967,-79.3676753
+M4Y,Downtown Toronto,Church and Wellesley,43.6658599,-79.38315990000001
+M5A,Downtown Toronto,"Harbourfront, Regent Park",43.6542599,-79.3606359
+M5B,Downtown Toronto,"Ryerson, Garden District",43.6571618,-79.37893709999999
+M5C,Downtown Toronto,St. James Town,43.6514939,-79.3754179
+M5E,Downtown Toronto,Berczy Park,43.644770799999996,-79.3733064
+M5G,Downtown Toronto,Central Bay Street,43.6579524,-79.3873826
+M5H,Downtown Toronto,"Adelaide, King, Richmond",43.65057120000001,-79.3845675
+M5J,Downtown Toronto,"Harbourfront East, Toronto Islands, Union Station",43.6408157,-79.38175229999999
+M5K,Downtown Toronto,"Design Exchange, Toronto Dominion Centre",43.6471768,-79.38157640000001
+M5L,Downtown Toronto,"Commerce Court, Victoria Hotel",43.6481985,-79.37981690000001
+M5N,Central Toronto,Roselawn,43.7116948,-79.41693559999999
+M5P,Central Toronto,"Forest Hill North, Forest Hill West",43.6969476,-79.41130720000001
+M5R,Central Toronto,"The Annex, North Midtown, Yorkville",43.6727097,-79.40567840000001
+M5S,Downtown Toronto,"Harbord, University of Toronto",43.6626956,-79.4000493
+M5T,Downtown Toronto,"Chinatown, Grange Park, Kensington Market",43.6532057,-79.4000493
+M5V,Downtown Toronto,"CN Tower, Bathurst Quay, Island airport, Harbourfront West, King and Spadina, Railway Lands, South Niagara",43.6289467,-79.3944199
+M5W,Downtown Toronto,Stn A PO Boxes 25 The Esplanade,43.6464352,-79.37484599999999
+M5X,Downtown Toronto,"First Canadian Place, Underground city",43.6484292,-79.3822802
+M6G,Downtown Toronto,Christie,43.669542,-79.4225637
+M6H,West Toronto,"Dovercourt Village, Dufferin",43.66900510000001,-79.4422593
+M6J,West Toronto,"Little Portugal, Trinity",43.647926700000006,-79.4197497
+M6K,West Toronto,"Brockton, Exhibition Place, Parkdale Village",43.6368472,-79.42819140000002
+M6P,West Toronto,"High Park, The Junction South",43.6616083,-79.46476329999999
+M6R,West Toronto,"Parkdale, Roncesvalles",43.6489597,-79.456325
+M6S,West Toronto,"Runnymede, Swansea",43.6515706,-79.4844499
+M7Y,East Toronto,Business Reply Mail Processing Centre 969 Eastern,43.6627439,-79.321558
