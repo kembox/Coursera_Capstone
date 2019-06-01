@@ -54,13 +54,15 @@ print('CLIENT_SECRET:' + CLIENT_SECRET)
 client = foursquare.Foursquare(client_id=CLIENT_ID, client_secret=CLIENT_SECRET,version='20190528')
 
 #Venues categories
-visibility={'Intersection':'52f2ab2ebcbc57f1066b8b4c'}
+
+#Visibility
+easy_view={'Intersection':'52f2ab2ebcbc57f1066b8b4c'}
 
 #support parking lot
-Parking={'ParkingLot':'4c38df4de52ce0d596b336e1','Hotel':'4bf58dd8d48988d1fa931735'}
+parking={'ParkingLot':'4c38df4de52ce0d596b336e1','Hotel':'4bf58dd8d48988d1fa931735'}
 
 #accessibility
-accessibility={
+transport={
         'BusStation':'4bf58dd8d48988d1fe931735',
         'BusStop':'52f2ab2ebcbc57f1066b8b4f', 
         'MetroStation':'4bf58dd8d48988d1fd931735',
@@ -87,19 +89,33 @@ supply={
         }
 
 
-def ParkingLotNearby(venue_categories,radius=500,count=3):
-    L=[]
-    global toronto_data
+def VenuesNearby(df,venue_categories,radius=500):
+    nearby_df=pd.DataFrame([])
     for k in venue_categories.keys():
+        L=[]
         venue_category=venue_categories[k]    
-        for row in toronto_data.itertuples():
+        for row in df.itertuples():
+        #for row in df.head().itertuples():
             ll=str(row.Latitude) + ',' +  str(row.Longitude)
             venue=client.venues.search(params={'ll':ll,'categoryId':venue_category,'radius':radius})
-            print(venue)
-            L.append(len(venue['venues']))
-        extra_df=pd.DataFrame(L,columns=[k + 'NearBy'])
-        toronto_data=toronto_data.join(extra_df)
+            if len(venue['venues']) > 0:
+                L.append(len(venue['venues']))
+        if nearby_df.empty: 
+            nearby_df=pd.DataFrame(L,columns=[k + 'NearBy'])
+        else:
+            nearby_df=nearby_df.join(pd.DataFrame(L,columns=[k + 'NearBy']))
+    
+    return nearby_df
     
 
-ParkingLotNearby(supply)
-#print(toronto_data.head())
+supply_nearby=VenuesNearby(toronto_data,supply,radius=3000)
+easy_view_nearby=VenuesNearby(toronto_data,easy_view,radius=500)
+park_nearby=VenuesNearby(toronto_data,park,radius=500)
+transport_nearby=VenuesNearby(toronto_data,transport,radius=1000)
+customer_source_nearby=VenuesNearby(toronto_data,customer_source,radius=1000)
+
+#Merge all the nearby venues data into main dataframe
+places=[supply_nearby,easy_view_nearby,park_nearby,transport_nearby,customer_source_nearby]
+#places=[supply_nearby]
+for i in range(len(places)):
+    toronto_data=toronto_data.join(places[i])
