@@ -54,43 +54,52 @@ print('CLIENT_SECRET:' + CLIENT_SECRET)
 client = foursquare.Foursquare(client_id=CLIENT_ID, client_secret=CLIENT_SECRET,version='20190528')
 
 #Venues categories
-Residence='4e67e38e036454776db1fb3a'
-ParkingLot='4c38df4de52ce0d596b336e1'
-BusStation='4bf58dd8d48988d1fe931735'
-BusStop='52f2ab2ebcbc57f1066b8b4f'
-Hotel='4bf58dd8d48988d1fa931735'
-Intersection='52f2ab2ebcbc57f1066b8b4c'
-MetroStation='4bf58dd8d48988d1fd931735'
-LightRailStation='4bf58dd8d48988d1fc931735'
-TrainStation='4bf58dd8d48988d129951735'
-Office='4bf58dd8d48988d124941735'
-Market='50be8ee891d4fa8dcc7199a7'
-MovieTheater='4bf58dd8d48988d17f941735'
-KitchenSupplyStore='58daa1558bbb0b01f18ec1b4'
-Butcher='4bf58dd8d48988d11d951735'
-CheeseShop='4bf58dd8d48988d11e951735'
-FarmersMarket='4bf58dd8d48988d1fa941735'
-FishMarket='4bf58dd8d48988d10e951735'
-FoodService='56aa371be4b08b9a8d573550'
-GourmetShop='4bf58dd8d48988d1f5941735'
-GroceryStore='4bf58dd8d48988d118951735'
+visibility={'Intersection':'52f2ab2ebcbc57f1066b8b4c'}
+
+#support parking lot
+Parking={'ParkingLot':'4c38df4de52ce0d596b336e1','Hotel':'4bf58dd8d48988d1fa931735'}
+
+#accessibility
+accessibility={
+        'BusStation':'4bf58dd8d48988d1fe931735',
+        'BusStop':'52f2ab2ebcbc57f1066b8b4f', 
+        'MetroStation':'4bf58dd8d48988d1fd931735',
+        'LightRailStation':'4bf58dd8d48988d1fc931735',
+        'TrainStation':'4bf58dd8d48988d129951735'
+        }
+
+#Customer source
+customer_source={
+        'Office':'4bf58dd8d48988d124941735',
+        'Residence':'4e67e38e036454776db1fb3a',
+        'ShoppingPlaza':'5744ccdfe4b0c0459246b4dc',
+        'PedestrianPlaza':'52e81612bcbc57f1066b7a25',
+        'CollegeUniversity':'4d4b7105d754a06372d81259'
+        }
+
+#Material supply
+supply={
+        'Market':'50be8ee891d4fa8dcc7199a7',
+        'SuperMarket':'52f2ab2ebcbc57f1066b8b46',
+        'Butcher':'4bf58dd8d48988d11d951735',
+        'FarmersMarket':'4bf58dd8d48988d1fa941735',
+        'FishMarket':'4bf58dd8d48988d10e951735'
+        }
 
 
-def ParkingLotNearby(venue_category,radius=500,count=3):
+def ParkingLotNearby(venue_categories,radius=500,count=3):
     L=[]
     global toronto_data
-    #for row in df.head(10).itertuples():
-    for row in df.itertuples():
-        ll=str(row.Latitude) + ',' +  str(row.Longitude)
-        venue=client.venues.search(params={'ll':ll,'categoryId':venue_category,'radius':radius})
-        print(venue)
-        if len(venue['venues']) > count:
-            L.append(1)
-        else:
-            L.append(0)
-    extra_df=pd.DataFrame(L,columns=['FishMarket'])
-    toronto_data=toronto_data.join(extra_df)
+    for k in venue_categories.keys():
+        venue_category=venue_categories[k]    
+        for row in toronto_data.itertuples():
+            ll=str(row.Latitude) + ',' +  str(row.Longitude)
+            venue=client.venues.search(params={'ll':ll,'categoryId':venue_category,'radius':radius})
+            print(venue)
+            L.append(len(venue['venues']))
+        extra_df=pd.DataFrame(L,columns=[k + 'NearBy'])
+        toronto_data=toronto_data.join(extra_df)
     
 
-ParkingLotNearby(FishMarket)
-print(toronto_data.head())
+ParkingLotNearby(supply)
+#print(toronto_data.head())
